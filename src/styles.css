@@ -168,3 +168,56 @@
     color: var(--color-foreground);
   }
 }
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-body);
+    color: var(--body-text);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: var(--font-display);
+    color: var(--foreground);
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--primary);
+}
+
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee-x 26s linear infinite;
+}
+
+@keyframes lens-sweep {
+  0% {
+    left: -12%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.animate-lens {
+  animation: lens-sweep 9s ease-in-out infinite alternate;
+}
