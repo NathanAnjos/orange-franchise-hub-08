@@ -26,7 +26,20 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-body-text: var(--body-text);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-border-primary: var(--border-primary);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
+  --shadow-soft: var(--shadow-soft);
+  --shadow-card: var(--shadow-card);
+  --shadow-glow: var(--shadow-glow);
+  --radius-pill: 50px;
   --color-background: var(--background);
+
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
@@ -62,26 +75,38 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 1rem;
+  --background: oklch(0.973 0 0);
+  --foreground: oklch(0.19 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.19 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.19 0 0);
+  --primary: oklch(0.664 0.191 46.5);
+  --primary-foreground: oklch(1 0 0);
+  --primary-light: oklch(0.727 0.171 51);
+  --primary-dark: oklch(0.575 0.166 44);
+  --secondary: oklch(0.96 0 0);
+  --secondary-foreground: oklch(0.19 0 0);
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.535 0 0);
+  --accent: oklch(0.664 0.191 46.5 / 6%);
+  --accent-foreground: oklch(0.575 0.166 44);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0 0 0 / 9%);
+  --input: oklch(0 0 0 / 12%);
+  --ring: oklch(0.664 0.191 46.5);
+  --ink: oklch(0.19 0 0);
+  --ink-foreground: oklch(0.98 0 0);
+  --body-text: oklch(0.32 0 0);
+  --border-primary: oklch(0.664 0.191 46.5 / 30%);
+  --gradient-primary: linear-gradient(135deg, oklch(0.664 0.191 46.5), oklch(0.727 0.171 51));
+  --shadow-soft: 0 4px 24px oklch(0 0 0 / 6%);
+  --shadow-card: 0 18px 50px -20px oklch(0 0 0 / 22%);
+  --shadow-glow: 0 12px 40px -10px oklch(0.664 0.191 46.5 / 45%);
+  --font-display: "Outfit", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -96,6 +121,7 @@
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
 }
+
 
 .dark {
   --background: oklch(0.129 0.042 264.695);
@@ -141,4 +167,57 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-body);
+    color: var(--body-text);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: var(--font-display);
+    color: var(--foreground);
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--primary);
+}
+
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee-x 26s linear infinite;
+}
+
+@keyframes lens-sweep {
+  0% {
+    left: -12%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.animate-lens {
+  animation: lens-sweep 9s ease-in-out infinite alternate;
 }
