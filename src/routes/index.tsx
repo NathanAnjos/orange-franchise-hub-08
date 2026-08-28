@@ -224,7 +224,7 @@ function Hero() {
             className="h-full w-full object-cover grayscale"
           />
         </div>
-        <div className="flex flex-col justify-center gap-6 px-6 py-12 sm:px-12 lg:pr-28">
+        <div className="flex flex-col justify-center gap-5 px-5 py-8 sm:gap-6 sm:px-12 sm:py-12 lg:pr-28">
           <Badge>Nº 1 em Crescimento</Badge>
           <h1 className="font-display text-[30px] leading-[1.15] font-extrabold tracking-tight sm:text-4xl">
             ABRA SUA <span className="text-primary">ÓTICA ORANGE</span> E LUCRE COM O MERCADO QUE
@@ -347,7 +347,7 @@ function Why() {
         {cards.map((c) => (
           <div
             key={c.t}
-            className="rounded-[20px] border border-border bg-card p-7 shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card)]"
+            className="rounded-[20px] border border-border bg-card p-6 sm:p-7 shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card)]"
           >
             <span className="grid h-11 w-11 place-items-center rounded-[16px] bg-accent text-primary">
               <c.icon className="h-5 w-5" />
@@ -532,7 +532,7 @@ function OwnBrands() {
           {brands.map((b) => (
             <div
               key={b.name}
-              className="rounded-[20px] border border-border bg-background p-8 shadow-[var(--shadow-soft)]"
+              className="rounded-[20px] border border-border bg-background p-6 sm:p-8 shadow-[var(--shadow-soft)]"
             >
               <span className="grid h-11 w-11 place-items-center rounded-[16px] bg-accent text-primary">
                 <Glasses className="h-5 w-5" />
@@ -577,7 +577,7 @@ function Lenses() {
         {partners.map((p) => (
           <div
             key={p.n}
-            className="rounded-[20px] border border-border bg-card p-8 text-center shadow-[var(--shadow-soft)]"
+            className="rounded-[20px] border border-border bg-card p-6 text-center sm:p-8 shadow-[var(--shadow-soft)]"
           >
             <p className="font-display text-2xl font-extrabold tracking-[0.14em]">{p.n}</p>
             <p className="eyebrow mt-2">{p.c}</p>
@@ -875,7 +875,7 @@ function HowItWorks() {
         {steps.map((s, i) => (
           <div
             key={s.t}
-            className="rounded-[20px] border border-border bg-card p-7 shadow-[var(--shadow-soft)]"
+            className="rounded-[20px] border border-border bg-card p-6 sm:p-7 shadow-[var(--shadow-soft)]"
           >
             <span className="grid h-11 w-11 place-items-center rounded-full bg-primary font-display font-extrabold text-primary-foreground">
               {i + 1}
