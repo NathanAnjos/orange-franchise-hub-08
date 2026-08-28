@@ -221,7 +221,7 @@ function Hero() {
             alt="Mulher usando óculos de grau em retrato editorial preto e branco"
             width={1024}
             height={1536}
-            className="h-full w-full object-cover grayscale"
+            className="h-full w-full object-cover object-top grayscale lg:object-center"
           />
         </div>
         <div className="flex flex-col justify-center gap-5 px-5 py-8 sm:gap-6 sm:px-12 sm:py-12 lg:pr-28">
