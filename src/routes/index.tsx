@@ -389,8 +389,8 @@ function Gallery() {
             className="group relative overflow-hidden rounded-[20px] shadow-[var(--shadow-card)]"
           >
             <img
-              src={galleryImages[0].src}
-              alt={galleryImages[0].alt}
+              src={galleryImages[0]?.src}
+              alt={galleryImages[0]?.alt ?? ""}
               loading="lazy"
               width={1536}
               height={1024}
@@ -425,8 +425,8 @@ function Gallery() {
         <DialogContent className="max-w-4xl border-none bg-transparent p-0 shadow-none">
           <div className="relative">
             <img
-              src={galleryImages[index].src}
-              alt={galleryImages[index].alt}
+              src={galleryImages[index]?.src}
+              alt={galleryImages[index]?.alt ?? ""}
               className="w-full rounded-[20px]"
             />
             <button
