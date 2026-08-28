@@ -215,16 +215,16 @@ function Hero() {
   return (
     <section className="relative bg-background pt-14">
       <div className="grid lg:grid-cols-2">
-        <div className="relative min-h-[320px] lg:min-h-[760px]">
+        <div className="relative h-[52vw] max-h-[420px] min-h-[240px] lg:h-auto lg:max-h-none lg:min-h-[760px]">
           <img
             src={heroWoman}
             alt="Mulher usando óculos de grau em retrato editorial preto e branco"
             width={1024}
             height={1536}
-            className="h-full w-full object-cover grayscale"
+            className="h-full w-full object-cover object-top grayscale lg:object-center"
           />
         </div>
-        <div className="flex flex-col justify-center gap-6 px-6 py-12 sm:px-12 lg:pr-28">
+        <div className="flex flex-col justify-center gap-5 px-5 py-8 sm:gap-6 sm:px-12 sm:py-12 lg:pr-28">
           <Badge>Nº 1 em Crescimento</Badge>
           <h1 className="font-display text-[30px] leading-[1.15] font-extrabold tracking-tight sm:text-4xl">
             ABRA SUA <span className="text-primary">ÓTICA ORANGE</span> E LUCRE COM O MERCADO QUE
@@ -288,12 +288,12 @@ function Stats() {
 
 function Marquee() {
   const phrase = (
-    <span className="mx-8 inline-flex items-center font-display text-4xl font-extrabold tracking-tight whitespace-nowrap text-ink-foreground sm:text-6xl lg:text-7xl">
+    <span className="mx-5 inline-flex items-center font-display text-2xl sm:mx-8 font-extrabold tracking-tight whitespace-nowrap text-ink-foreground sm:text-5xl lg:text-7xl">
       ENXERGUE A <span className="mx-4 text-primary">OPORTUNIDADE</span> QUE POUCOS VEEM
     </span>
   );
   return (
-    <section className="relative overflow-hidden bg-ink py-14">
+    <section className="relative overflow-hidden bg-ink py-8 sm:py-14">
       <div className="flex w-max animate-marquee">
         {phrase}
         {phrase}
@@ -334,7 +334,7 @@ function Why() {
     },
   ];
   return (
-    <section className="mx-auto max-w-6xl px-5 py-20">
+    <section className="mx-auto max-w-6xl px-5 py-12 sm:py-20">
       <SectionHeading
         title={
           <>
@@ -343,11 +343,11 @@ function Why() {
         }
         subtitle="Vantagens exclusivas que fazem a diferença no seu negócio"
       />
-      <div className="mt-12 grid gap-6 md:grid-cols-3">
+      <div className="mt-8 grid sm:mt-12 gap-6 md:grid-cols-3">
         {cards.map((c) => (
           <div
             key={c.t}
-            className="rounded-[20px] border border-border bg-card p-7 shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card)]"
+            className="rounded-[20px] border border-border bg-card p-6 sm:p-7 shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card)]"
           >
             <span className="grid h-11 w-11 place-items-center rounded-[16px] bg-accent text-primary">
               <c.icon className="h-5 w-5" />
@@ -372,7 +372,7 @@ function Gallery() {
     setOpen(true);
   };
   return (
-    <section className="bg-card py-20">
+    <section className="bg-card py-12 sm:py-20">
       <div className="mx-auto max-w-6xl px-5">
         <SectionHeading
           title={
@@ -382,15 +382,15 @@ function Gallery() {
           }
           subtitle="Um projeto arquitetônico pensado para vender mais"
         />
-        <div className="mt-12 grid gap-4 lg:grid-cols-[2fr_1fr]">
+        <div className="mt-8 grid sm:mt-12 gap-4 lg:grid-cols-[2fr_1fr]">
           <button
             type="button"
             onClick={() => show(0)}
             className="group relative overflow-hidden rounded-[20px] shadow-[var(--shadow-card)]"
           >
             <img
-              src={galleryImages[0].src}
-              alt={galleryImages[0].alt}
+              src={galleryImages[0]?.src}
+              alt={galleryImages[0]?.alt ?? ""}
               loading="lazy"
               width={1536}
               height={1024}
@@ -425,8 +425,8 @@ function Gallery() {
         <DialogContent className="max-w-4xl border-none bg-transparent p-0 shadow-none">
           <div className="relative">
             <img
-              src={galleryImages[index].src}
-              alt={galleryImages[index].alt}
+              src={galleryImages[index]?.src}
+              alt={galleryImages[index]?.alt ?? ""}
               className="w-full rounded-[20px]"
             />
             <button
@@ -454,7 +454,7 @@ function Gallery() {
 
 function Segment() {
   return (
-    <section className="mx-auto max-w-6xl px-5 py-20">
+    <section className="mx-auto max-w-6xl px-5 py-12 sm:py-20">
       <div className="grid items-center gap-10 lg:grid-cols-2">
         <div>
           <h2 className="font-display text-2xl leading-tight font-extrabold sm:text-4xl">
@@ -517,7 +517,7 @@ function OwnBrands() {
     },
   ];
   return (
-    <section className="bg-card py-20">
+    <section className="bg-card py-12 sm:py-20">
       <div className="mx-auto max-w-6xl px-5">
         <SectionHeading
           eyebrow="Marcas exclusivas"
@@ -528,11 +528,11 @@ function OwnBrands() {
           }
           subtitle="Margem superior e diferenciação real frente a qualquer concorrente da sua região."
         />
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+        <div className="mt-8 grid sm:mt-12 gap-6 md:grid-cols-2">
           {brands.map((b) => (
             <div
               key={b.name}
-              className="rounded-[20px] border border-border bg-background p-8 shadow-[var(--shadow-soft)]"
+              className="rounded-[20px] border border-border bg-background p-6 sm:p-8 shadow-[var(--shadow-soft)]"
             >
               <span className="grid h-11 w-11 place-items-center rounded-[16px] bg-accent text-primary">
                 <Glasses className="h-5 w-5" />
@@ -564,7 +564,7 @@ function Lenses() {
     },
   ];
   return (
-    <section className="mx-auto max-w-6xl px-5 py-20">
+    <section className="mx-auto max-w-6xl px-5 py-12 sm:py-20">
       <SectionHeading
         eyebrow="Lentes premium"
         title={
@@ -573,11 +573,11 @@ function Lenses() {
           </>
         }
       />
-      <div className="mt-12 grid gap-6 md:grid-cols-3">
+      <div className="mt-8 grid sm:mt-12 gap-6 md:grid-cols-3">
         {partners.map((p) => (
           <div
             key={p.n}
-            className="rounded-[20px] border border-border bg-card p-8 text-center shadow-[var(--shadow-soft)]"
+            className="rounded-[20px] border border-border bg-card p-6 text-center sm:p-8 shadow-[var(--shadow-soft)]"
           >
             <p className="font-display text-2xl font-extrabold tracking-[0.14em]">{p.n}</p>
             <p className="eyebrow mt-2">{p.c}</p>
@@ -594,7 +594,7 @@ function Grifes() {
   const [expanded, setExpanded] = useState(false);
   const list = expanded ? grifes : grifes.slice(0, 12);
   return (
-    <section className="bg-card py-20">
+    <section className="bg-card py-12 sm:py-20">
       <div className="mx-auto max-w-6xl px-5">
         <SectionHeading
           eyebrow="Portfólio completo"
@@ -604,7 +604,7 @@ function Grifes() {
             </>
           }
         />
-        <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="mt-8 grid sm:mt-12 grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {list.map((g) => (
             <div
               key={g}
@@ -666,7 +666,7 @@ function Pricing() {
     },
   ];
   return (
-    <section className="mx-auto max-w-6xl px-5 py-20">
+    <section className="mx-auto max-w-6xl px-5 py-12 sm:py-20">
       <SectionHeading
         eyebrow="Escolha seu modelo"
         title={
@@ -676,7 +676,7 @@ function Pricing() {
         }
         subtitle="Três modelos pensados para investidores em diferentes estágios. Escolha o que combina com sua ambição."
       />
-      <div className="mt-12 grid items-center gap-6 lg:grid-cols-3">
+      <div className="mt-8 grid sm:mt-12 items-center gap-6 lg:grid-cols-3">
         {plans.map((p) => (
           <div
             key={p.n}
@@ -722,7 +722,7 @@ function Testimonials() {
     { n: "Ricardo L.", c: "Franqueado · Curitiba/PR", i: store3 },
   ];
   return (
-    <section className="bg-card py-20">
+    <section className="bg-card py-12 sm:py-20">
       <div className="mx-auto max-w-6xl px-5">
         <SectionHeading
           title={
@@ -732,7 +732,7 @@ function Testimonials() {
           }
           subtitle="Experiências reais de quem transformou visão em negócio"
         />
-        <div className="mt-12 grid items-center gap-6 md:grid-cols-3">
+        <div className="mt-8 grid sm:mt-12 items-center gap-6 md:grid-cols-3">
           {items.map((t, idx) => (
             <div
               key={t.n}
@@ -768,7 +768,7 @@ function Testimonials() {
 function Campaigns() {
   const pieces = [store5, store2, storeMain, store3];
   return (
-    <section className="mx-auto max-w-6xl px-5 py-20">
+    <section className="mx-auto max-w-6xl px-5 py-12 sm:py-20">
       <SectionHeading
         title={
           <>
@@ -777,7 +777,7 @@ function Campaigns() {
           </>
         }
       />
-      <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-8 grid sm:mt-12 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {pieces.map((p, i) => (
           <div key={i} className="overflow-hidden rounded-[20px] border border-border">
             <img
@@ -797,7 +797,7 @@ function Campaigns() {
 
 function Urgency() {
   return (
-    <section className="bg-ink py-20">
+    <section className="bg-ink py-12 sm:py-20">
       <div className="mx-auto max-w-3xl px-5 text-center">
         <p className="eyebrow">A decisão que muda tudo</p>
         <h2 className="mt-4 font-display text-2xl leading-tight font-extrabold text-ink-foreground sm:text-4xl">
@@ -862,7 +862,7 @@ function HowItWorks() {
     },
   ];
   return (
-    <section className="mx-auto max-w-6xl px-5 py-20">
+    <section className="mx-auto max-w-6xl px-5 py-12 sm:py-20">
       <SectionHeading
         title={
           <>
@@ -871,11 +871,11 @@ function HowItWorks() {
         }
         subtitle="Do primeiro contato até a inauguração da sua loja"
       />
-      <div className="mt-12 grid gap-6 md:grid-cols-3">
+      <div className="mt-8 grid sm:mt-12 gap-6 md:grid-cols-3">
         {steps.map((s, i) => (
           <div
             key={s.t}
-            className="rounded-[20px] border border-border bg-card p-7 shadow-[var(--shadow-soft)]"
+            className="rounded-[20px] border border-border bg-card p-6 sm:p-7 shadow-[var(--shadow-soft)]"
           >
             <span className="grid h-11 w-11 place-items-center rounded-full bg-primary font-display font-extrabold text-primary-foreground">
               {i + 1}
@@ -913,7 +913,7 @@ function Faq() {
     },
   ];
   return (
-    <section className="bg-card py-20">
+    <section className="bg-card py-12 sm:py-20">
       <div className="mx-auto max-w-3xl px-5">
         <SectionHeading
           eyebrow="Tire suas dúvidas"
@@ -968,7 +968,7 @@ function Footer() {
 
 function MobileCta() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-card/95 p-3 backdrop-blur lg:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-card/95 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur lg:hidden">
       <button
         type="button"
         onClick={scrollToForm}
