@@ -215,7 +215,7 @@ function Hero() {
   return (
     <section className="relative bg-background pt-14">
       <div className="grid lg:grid-cols-2">
-        <div className="relative h-[52vw] max-h-[420px] min-h-[240px] lg:h-auto lg:max-h-none lg:min-h-[760px]">
+        <div className="relative h-[52vw] max-h-[420px] min-h-[240px] lg:h-auto lg:max-h-none lg:min-h-[900px]">
           <img
             src={heroWoman}
             alt="Mulher usando óculos de grau em retrato editorial preto e branco"
@@ -224,31 +224,35 @@ function Hero() {
             className="h-full w-full object-cover object-top grayscale lg:object-center"
           />
         </div>
-        <div className="flex flex-col justify-center gap-5 px-5 py-8 sm:gap-6 sm:px-12 sm:py-12 lg:pr-28">
-          <Badge>Nº 1 em Crescimento</Badge>
-          <h1 className="font-display text-[30px] leading-[1.15] font-extrabold tracking-tight sm:text-4xl">
-            ABRA SUA <span className="text-primary">ÓTICA ORANGE</span> E LUCRE COM O MERCADO QUE
-            NUNCA PARA DE CRESCER
+        <div className="flex flex-col justify-center gap-5 px-5 py-8 sm:gap-6 sm:px-12 sm:py-12 lg:pr-[420px]">
+          <h1 className="font-display text-[30px] leading-[1.1] font-extrabold tracking-tight sm:text-4xl lg:text-[44px]">
+            Quer ser dono da sua própria <span className="text-primary">Ótica</span>?
           </h1>
+          <p className="font-display text-lg font-semibold text-foreground sm:text-xl">
+            Lucre em um segmento que nunca para de crescer
+          </p>
+          <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+            Fature até R$ 1,5 milhão ao ano com seu próprio negócio!
+          </p>
           <ul className="space-y-2.5">
-            <CheckItem>
-              <strong>Lucro médio Mensal:</strong> 20%
-            </CheckItem>
-            <CheckItem>
-              <strong>Prazo de Retorno:</strong> 18 meses
-            </CheckItem>
-            <CheckItem>
-              <strong>Ponto de Equilíbrio:</strong> 6 meses
-            </CheckItem>
+            <CheckItem>Retorno do investimento de 18 a 24 meses</CheckItem>
+            <CheckItem>Lucratividade média de 25%</CheckItem>
+            <CheckItem>Não exige experiência no setor óptico</CheckItem>
           </ul>
-          <div className="grid grid-cols-3 gap-3">
-            <MiniBlock top="A partir de" mid="R$ 99 Mil" sub="Investimento Inicial" />
-            <MiniBlock top="Altíssima" mid="Margem" sub="de Lucro" />
-            <MiniBlock top="Suporte" mid="Completo" sub="360°" />
+          <div className="rounded-[20px] border border-border-primary bg-accent p-5 text-center shadow-[var(--shadow-soft)]">
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              Investimento inicial
+            </p>
+            <p className="mt-1 font-display text-3xl font-extrabold text-primary sm:text-4xl">
+              A partir de R$ 99 mil
+            </p>
           </div>
+          <CtaButton withIcon className="w-full px-6 py-4 text-base sm:w-auto">
+            RECEBER APRESENTAÇÃO POR WHATSAPP
+          </CtaButton>
         </div>
       </div>
-      <div className="relative z-10 mx-auto -mt-6 w-full max-w-md px-5 pb-12 lg:absolute lg:right-16 lg:bottom-10 lg:mt-0 lg:px-0 lg:pb-0">
+      <div className="relative z-10 mx-auto -mt-6 w-full max-w-md px-5 pb-12 lg:absolute lg:right-16 lg:top-1/2 lg:mt-0 lg:-translate-y-1/2 lg:px-0 lg:pb-0">
         <LeadForm />
       </div>
     </section>
