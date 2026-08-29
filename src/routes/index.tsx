@@ -215,7 +215,7 @@ function Hero() {
   return (
     <section className="relative bg-background pt-14">
       <div className="grid lg:grid-cols-2">
-        <div className="relative h-[52vw] max-h-[420px] min-h-[240px] lg:h-auto lg:max-h-none lg:min-h-[760px]">
+        <div className="relative h-[52vw] max-h-[420px] min-h-[240px] lg:h-auto lg:max-h-none lg:min-h-[900px]">
           <img
             src={heroWoman}
             alt="Mulher usando óculos de grau em retrato editorial preto e branco"
@@ -224,7 +224,7 @@ function Hero() {
             className="h-full w-full object-cover object-top grayscale lg:object-center"
           />
         </div>
-        <div className="flex flex-col justify-center gap-5 px-5 py-8 sm:gap-6 sm:px-12 sm:py-12 lg:pr-28">
+        <div className="flex flex-col justify-center gap-5 px-5 py-8 sm:gap-6 sm:px-12 sm:py-12 lg:pr-[420px]">
           <h1 className="font-display text-[30px] leading-[1.1] font-extrabold tracking-tight sm:text-4xl lg:text-[44px]">
             Quer ser dono da sua própria <span className="text-primary">Ótica</span>?
           </h1>
@@ -252,7 +252,7 @@ function Hero() {
           </CtaButton>
         </div>
       </div>
-      <div className="relative z-10 mx-auto -mt-6 w-full max-w-md px-5 pb-12 lg:absolute lg:right-16 lg:bottom-10 lg:mt-0 lg:px-0 lg:pb-0">
+      <div className="relative z-10 mx-auto -mt-6 w-full max-w-md px-5 pb-12 lg:absolute lg:right-16 lg:top-1/2 lg:mt-0 lg:-translate-y-1/2 lg:px-0 lg:pb-0">
         <LeadForm />
       </div>
     </section>
